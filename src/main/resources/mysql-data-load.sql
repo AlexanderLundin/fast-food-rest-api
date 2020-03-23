@@ -9,6 +9,7 @@ CREATE TABLE orders
     created_at     VARCHAR(50) DEFAULT 'EMPTY',
     status          VARCHAR(50) DEFAULT 'EMPTY',
     description       VARCHAR(200),
+    note       VARCHAR(200),
     last_updated        VARCHAR(50),
     PRIMARY KEY (id)
 );

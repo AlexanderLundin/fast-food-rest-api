@@ -17,6 +17,8 @@ public class Order {
     Enum status;
     @Column(name = "description")
     String description;
+    @Column(name = "note")
+    String note;
     @Column(name = "last_updated")
     String lastUpdated;
 
@@ -75,6 +77,14 @@ public class Order {
 
     public void setStatus(Enum status) {
         this.status = status;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public String getDescription() {

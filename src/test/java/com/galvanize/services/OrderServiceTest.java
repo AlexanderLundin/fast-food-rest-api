@@ -70,11 +70,14 @@ class OrderServiceTest {
     @Test
     public void assignOneOrderById_whenOrderExists_returnOrder() {
         //Setup
-        String status = Status.CANCELLED.toString();
+        long id = 1L;
+        String customerName = "renamed";
+        Status status = Status.CANCELLED;
+        String note = "";
         //Exercise
-        Order order = orderService.assign(1L, status);
+        Order order = orderService.updateOrder(id, customerName, status, note);
         //Assert
-        assertEquals(status, order.getStatus().toString());
+        assertEquals(status, order.getStatus());
         //Teardown
     }
 

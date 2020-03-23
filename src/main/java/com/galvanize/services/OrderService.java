@@ -29,9 +29,14 @@ public class OrderService {
         return orderDao.findAll();
     }
 
-    public Order assign(Long id, String status){
+    public Order updateOrder(Long id, String customerName, Status status, String note){
         Order order = getOrder(id);
-        order.setStatus(Status.valueOf(status));
+        if (customerName != "")
+          order.setCustomerName(customerName);
+        if (status != null)
+          order.setStatus(status);
+        if (note != "")
+          order.setNote(note);
         Order savedOrder = orderDao.saveAndFlush(order);
         return savedOrder;
     }

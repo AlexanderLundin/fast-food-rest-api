@@ -1,6 +1,7 @@
 package com.galvanize.controllers;
 
 import com.galvanize.dto.OrderRequest;
+import com.galvanize.dto.OrderUpdate;
 import com.galvanize.entities.Order;
 import com.galvanize.entities.Status;
 import com.galvanize.services.OrderService;
@@ -49,7 +50,20 @@ public class OrderController {
 
     @GetMapping("/orders/{id}")
     public Order getAllOrderById(@PathVariable long id){
-         Order order = orderService.getOrder(id);
+        Order order = orderService.getOrder(id);
         return order;
     }
+
+
+    //UPDATE
+    @PutMapping("/orders/{id}")
+    public Order updateOrderStatus(@PathVariable long id, @RequestBody OrderUpdate update){
+        // pull data fields off the request body object
+        String customerName = update.getCustomerName();
+        Status status = update.getStatus();
+        String note = update.getNote();
+        Order order = orderService.updateOrder(id, customerName, status, note);
+        return order;
+    }
+
 }

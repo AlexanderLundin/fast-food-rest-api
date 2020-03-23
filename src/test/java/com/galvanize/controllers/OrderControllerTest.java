@@ -2,6 +2,7 @@ package com.galvanize.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.galvanize.dto.OrderRequest;
+import com.galvanize.dto.OrderUpdate;
 import com.galvanize.entities.Order;
 import com.galvanize.entities.Status;
 import com.galvanize.repositories.OrderDao;
@@ -20,8 +21,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -105,8 +105,16 @@ class OrderControllerTest {
     public void testGetOrderById() throws Exception {
         //Setup
         String url = "/api/orders/1";
+        String customerName = "new Name";
+        Status status = Status.CANCELLED;
+        String note = "note";
+        OrderUpdate update = new OrderUpdate();
         //Exercise
-        ResultActions resultActions = mvc.perform(get(url))
+        ResultActions resultActions = mvc.perform(put(url)
+                .content(objectMapper.writeValueAsString(update))
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .accept(MediaType.APPLICATION_JSON_VALUE)
+        )
                 .andDo(print())
                 .andExpect(status().isOk());
         MvcResult result = resultActions.andReturn();
@@ -116,5 +124,9 @@ class OrderControllerTest {
         //assertEquals(expected, actual);
         //Teardown
     }
+
+
+    //UPDATE
+
 
 }
