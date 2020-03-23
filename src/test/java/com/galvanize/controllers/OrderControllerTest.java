@@ -101,6 +101,20 @@ class OrderControllerTest {
         //Teardown
     }
 
-
+    @Test
+    public void testGetOrderById() throws Exception {
+        //Setup
+        String url = "/api/orders/1";
+        //Exercise
+        ResultActions resultActions = mvc.perform(get(url))
+                .andDo(print())
+                .andExpect(status().isOk());
+        MvcResult result = resultActions.andReturn();
+        String contentAsString = result.getResponse().getContentAsString();
+        //List<Order> orders = Arrays.asList(objectMapper.readValue(contentAsString, Order[].class));
+        //Assert
+        //assertEquals(expected, actual);
+        //Teardown
+    }
 
 }
