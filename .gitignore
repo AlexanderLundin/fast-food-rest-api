@@ -5,6 +5,8 @@ build/
 !**/src/main/**
 !**/src/test/**
 
+fast_food_jar/
+
 ### STS ###
 .apt_generated
 .classpath
