@@ -20,6 +20,13 @@ public class OrderController {
         this.orderService = orderService;
     }
 
+    @RequestMapping("/hello")
+    public String hello(@RequestParam (required=false, defaultValue = "World") String name) {
+        if (name == ""){
+            name = "World";
+        }
+        return String.format("Hello %s from my first Spring Boot Application!", name);
+    }
 
 
     // CREATE
