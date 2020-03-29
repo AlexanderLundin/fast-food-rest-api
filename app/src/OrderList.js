@@ -51,7 +51,7 @@ class OrderList extends Component {
                 <td>{order.lastUpdated}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/api/orders/" + order.id}>Edit</Button>
+                        {/*<Button size="sm" color="primary" tag={Link} to={"/api/orders/" + order.id}>Edit</Button>*/}
                         <Button size="sm" color="danger" onClick={() => this.remove(order.id)}>Delete</Button>
                     </ButtonGroup>
                 </td>
@@ -63,16 +63,19 @@ class OrderList extends Component {
                 <AppNavbar/>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="/orders">Add Order</Button>
+                        {/*<Button color="success" tag={Link} to="/orders">Add Order</Button>*/}
                     </div>
-                    <h3>My JUG Tour</h3>
+                    <h3>Customer Service Request Table</h3>
                     <Table className="mt-4">
                         <thead>
                         <tr>
-                            <th width="20%">Name</th>
-                            <th width="20%">Location</th>
-                            <th>Events</th>
-                            <th width="10%">Actions</th>
+                            <th width="10%">Id</th>
+                            <th width="15%">Customer Name</th>
+                            <th width="15%">Created Date</th>
+                            <th width="10%">Status</th>
+                            <th>Note</th>
+                            <th width="10%">Description</th>
+                            <th width="10%">Updated Date</th>
                         </tr>
                         </thead>
                         <tbody>
