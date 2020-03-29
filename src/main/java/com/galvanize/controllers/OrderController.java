@@ -22,7 +22,7 @@ public class OrderController {
 
     @RequestMapping("/hello")
     public String hello(@RequestParam (required=false, defaultValue = "World") String name) {
-        if (name == ""){
+        if (name.equals("")){
             name = "World";
         }
         return String.format("Hello %s from my first Spring Boot Application!", name);
