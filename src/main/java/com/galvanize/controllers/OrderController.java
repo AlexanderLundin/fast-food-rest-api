@@ -63,6 +63,8 @@ public class OrderController {
 
 
     //UPDATE
+
+
     @PutMapping("/orders/{id}")
     public Order updateOrderStatus(@PathVariable long id, @RequestBody OrderUpdate update){
         // pull data fields off the request body object
@@ -72,5 +74,14 @@ public class OrderController {
         Order order = orderService.updateOrder(id, customerName, status, note);
         return order;
     }
+
+
+    //DELETE
+
+    @DeleteMapping("/orders/{id}")
+    public void deleteOrder(@PathVariable long id){
+        orderService.deleteById(id);
+    }
+
 
 }

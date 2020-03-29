@@ -40,5 +40,9 @@ public class OrderService {
         Order savedOrder = orderDao.saveAndFlush(order);
         return savedOrder;
     }
+
+    public void deleteById(Long id){
+        orderDao.deleteById(id);
+    }
 }
 
