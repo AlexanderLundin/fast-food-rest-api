@@ -21,7 +21,6 @@
     "eject": "react-scripts eject",
 	"deploy": "aws s3 sync build/ s3://serverless-customer-support-api-front-end --acl public-read"
   },
-  "proxy": "http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com",
   "eslintConfig": {
     "extends": "react-app"
   },
