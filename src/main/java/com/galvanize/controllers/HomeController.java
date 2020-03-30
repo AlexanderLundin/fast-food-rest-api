@@ -19,12 +19,6 @@ public class HomeController {
         this.orderService = orderService;
     }
 
-    @RequestMapping("/")
-    public ModelAndView redirectHomeToHomePage(ModelMap model) {
-        return new ModelAndView("redirect:/home", model);
-    }
-
-
     @RequestMapping("/home")
     public Model showHomePage(Model model){
         model.addAttribute("orders", orderService.getAllOrders());
