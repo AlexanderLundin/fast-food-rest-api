@@ -18,7 +18,7 @@ Below is a list of technologies used on this project
 
 ## Cloud Hosting
 
-AWS Elastic Beanstalk - sever back end with CORS enabled for cross-origin resource sharing to front-end
+AWS Elastic Beanstalk - server back end with CORS enabled for cross-origin resource sharing to front-end
 
 AWS S3 - static hosting of front end
 
