@@ -46,9 +46,8 @@ class OrderEdit extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         const {item} = this.state;
-
         await fetch('http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders', {
-            method: (item.id) ? 'PUT' : 'POST',
+            method: (this.props.match.params.id === "new") ? 'POST' : 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -63,17 +62,11 @@ class OrderEdit extends Component {
 
         const {item} = this.state;
         const title = <h2>{this.props.match.params.id !== "" ? 'Edit Order' : 'Add Order'}</h2>;
-
         return <div>
             <AppNavbar/>
             <Container>
                 {title}
                 <Form onSubmit={this.handleSubmit}>
-                    <FormGroup>
-                        <Label for="id">Id</Label>
-                        <Input type="text" name="id" id="id" value={item.id || ''}
-                               onChange={this.handleChange} autoComplete="id"/>
-                    </FormGroup>
                     <FormGroup>
                         <Label for="customerName">customerName</Label>
                         <Input type="text" name="customerName" id="customerName" value={item.customerName || ''}
