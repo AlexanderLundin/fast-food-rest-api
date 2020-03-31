@@ -3,14 +3,12 @@ Front-end
 
 http://serverless-customer-support-api-front-end.s3-website.us-east-2.amazonaws.com/
 
-Click link above for cloud hosted version of this application's front end
 
 
 Server
 
 http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders
 
-Click link above for cloud hosted version of this application's server endpoints
 
 # fast-food-rest-api
 Spring RESTful API for fast food orders
