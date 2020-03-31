@@ -56,7 +56,7 @@ class OrderList extends Component {
                 <td>{order.lastUpdated}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/api/orders/" + order.id}>Edit</Button>
+                        <Button size="sm" color="primary" tag={Link} to={"/orders/" + order.id}>Edit</Button>
                         <Button size="sm" color="danger" onClick={() => this.remove(order.id)}>Delete</Button>
                     </ButtonGroup>
                 </td>
@@ -68,7 +68,7 @@ class OrderList extends Component {
                 <AppNavbar/>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="/orders">Add Order</Button>
+                        <Button color="success" tag={Link} to="/orders/new">Add Order</Button>
                     </div>
                     <h3>Order Request Table</h3>
                     <Table className="mt-4">
