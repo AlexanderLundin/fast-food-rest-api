@@ -68,6 +68,7 @@ class OrderList extends Component {
                         <Button color="success" tag={Link} to="/orders/new">Add Order</Button>
                     </div>
                     <h3>Order Request Table</h3>
+                    <a target="_blank" href="http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders">Link to cloud hosted, server side, Spring Boot REST endpoint with CORS allowed</a>
                     <Table className="mt-4">
                         <thead>
                         <tr>

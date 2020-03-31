@@ -18,7 +18,7 @@ class Home extends Component {
             <div>
                 <AppNavbar/>
                 <Container fluid>
-                    <Button color="link"><Link to="/orders">Orders View</Link></Button>
+                    <Button color="link"><Link to="/orders">Orders View (Click me to see data from server side database)</Link></Button>
                 </Container>
 
             </div>
