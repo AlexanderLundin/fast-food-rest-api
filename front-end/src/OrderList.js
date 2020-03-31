@@ -14,9 +14,6 @@ class OrderList extends Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-
-
-
         fetch('http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders')
             .then(response => response.json())
             .then(data => this.setState(

@@ -45,9 +45,28 @@ class OrderEdit extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
+        const newFlag = this.props.match.params.id;
+        newFlag === "new" ? this.postOrder() : this.patchOrder();
+
+    }
+
+    async postOrder(){
         const {item} = this.state;
-        await fetch('http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders', {
-            method: (this.props.match.params.id === "new") ? 'POST' : 'PUT',
+        await fetch(`http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(item),
+        });
+        this.props.history.push('/orders');
+    }
+
+    async patchOrder(){
+        const {item} = this.state;
+        await fetch(`http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders/${this.props.match.params.id}`, {
+            method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
