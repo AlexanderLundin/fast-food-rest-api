@@ -25,7 +25,7 @@ class OrderList extends Component {
     }
 
     async remove(id) {
-        await fetch(`/api/orders/${id}`, {
+        await fetch(`http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders/${id}`, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
