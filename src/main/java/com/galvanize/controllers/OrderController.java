@@ -50,14 +50,12 @@ public class OrderController {
 
     //READ
 
-    @CrossOrigin
     @GetMapping("/orders")
     public List<Order> getAllOrders(){
         List<Order> orders = orderService.getAllOrders();
         return orders;
     }
 
-    @CrossOrigin
     @GetMapping("/orders/{id}")
     public Order getAllOrderById(@PathVariable long id){
         Order order = orderService.getOrder(id);
