@@ -4,7 +4,6 @@ import AppNavbar from './AppNavbar';
 import { Link } from 'react-router-dom';
 import { Button, Container } from 'reactstrap';
 
-import Logo from './logo.svg';
 
 class Home extends Component {
     constructor(props) {
@@ -20,7 +19,6 @@ class Home extends Component {
                 <AppNavbar/>
                 <Container fluid>
                     <Button color="link"><Link to="/orders">Orders View</Link></Button>
-                    <img style={{animation: `App-logo-spin ${this.state.speed}s linear infinite`}} src={Logo} alt="logo.svg"/>
                 </Container>
 
             </div>
