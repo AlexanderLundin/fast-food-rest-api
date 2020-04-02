@@ -8,7 +8,7 @@ export default class AppNavbar extends Component {
         super(props);
         this.state = {
             isOpen: false,
-            speed: 50
+            speed: 15
         };
         this.toggle = this.toggle.bind(this);
     }
